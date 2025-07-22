@@ -9,7 +9,7 @@ stock_prices = {
 # Dictionary to store the user's portfolio
 portfolio = {}
 
-print("📈 Welcome to the Stock Portfolio Tracker")
+print( "Welcome to the Stock Portfolio Tracker")
 print("Available stocks:", ', '.join(stock_prices.keys()))
 print("Type 'done' when finished.\n")
 
@@ -19,12 +19,12 @@ while True:
     if stock == 'DONE':
         break
     if stock not in stock_prices:
-        print("⚠️ Stock not found. Try again.")
+        print("Stock not found. Try again.")
         continue
     try:
         quantity = int(input(f"Enter quantity of {stock}: "))
     except ValueError:
-        print("⚠️ Invalid quantity. Please enter a number.")
+        print("Invalid quantity. Please enter a number.")
         continue
 
     # Add to portfolio
@@ -46,7 +46,7 @@ for stock, quantity in portfolio.items():
     print(line)
     lines.append(line)
 
-print(f"\n💰 Total Investment Value: ${total}")
+print(f"\nTotal Investment Value: ${total}")
 
 # Ask to save results
 save = input("Do you want to save the result to a file? (y/n): ").lower()
@@ -56,4 +56,4 @@ if save == 'y':
         for line in lines:
             file.write(line + "\n")
         file.write(f"\nTotal Investment Value: ${total}\n")
-    print("📁 Saved to 'portfolio.txt'.")
+    print(" Saved to 'portfolio.txt'.")
